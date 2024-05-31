@@ -58,8 +58,19 @@ function Player(name, choice) {
         choice,
         placeChoiceToBoard: function (number) {
             if (number > 0 && number < 10) {
-                gameboard.board[number - 1] = choice
-                console.log(gameboard.renderBoard());
+                if (isNaN(gameboard.board[number - 1])) {
+                    console.log("please choose another number")
+                } else {
+                    gameboard.board[number - 1] = choice
+                    if (game.endOfGame()) {
+                        alert("hey")
+                        gameboard.board = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+                        game.turn = 1;
+                        return
+                    } else {
+                        gameboard.renderBoard();
+                    }
+                }
             } else {
                 console.log("Place your choice on a number between 1 to 9");
             }
@@ -74,28 +85,29 @@ const player2 = Player('Hasan', 'O')
 // Gameboard object contains the tic tac toe board 
 function Gameboard() {
 
-    const board = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    let board = [1, 2, 3, 4, 5, 6, 7, 8, 9];
     let currentPlayer = player1.name;
+
+    function renderBoard() {
+        console.log(gameboard.board[0] + "---" + gameboard.board[1] + "---" + gameboard.board[2] + "\n" + "\n"
+            + gameboard.board[3] + "---" + gameboard.board[4] + "---" + gameboard.board[5] + "\n" + "\n"
+            + gameboard.board[6] + "---" + gameboard.board[7] + "---" + gameboard.board[8] + "\n" + "\n")
+
+        console.log("Round " + game.createTurn().getTurn() + ": I'ts the turn of -> " + currentPlayer)
+        game.createTurn().increment();
+        if (currentPlayer === player1.name) {
+            currentPlayer = player2.name
+        } else {
+            currentPlayer = player1.name
+        }
+    }
+    
     return {
         board,
-        renderBoard: function () {
-            console.log(board[0] + "---" + board[1] + "---" + board[2] + "\n" + "\n"
-                + board[3] + "---" + board[4] + "---" + board[5] + "\n" + "\n"
-                + board[6] + "---" + board[7] + "---" + board[8] + "\n" + "\n")
-            
-            console.log("Round " + game.createTurn().getTurn() + ": I'ts the turn of -> " + currentPlayer)
-            game.createTurn().increment();
-            if(currentPlayer === player1.name) {
-                return currentPlayer = player2.name
-            } else {
-                currentPlayer = player1.name
-            }
-        }
+        renderBoard
     }
 }
 const gameboard = Gameboard();
 
-gameboard.renderBoard()
 
-const gameWinner = GameWinner() */
 gameboard.renderBoard()
