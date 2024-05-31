@@ -15,10 +15,38 @@ function Game() {
         };
     }
 
-    return {
-        createTurn
+    function endOfGame() {
+
+        if ((gameboard.board[0] === "X" && gameboard.board[1] === "X" && gameboard.board[2] === "X") ||
+            (gameboard.board[3] === "X" && gameboard.board[4] === "X" && gameboard.board[5] === "X") ||
+            (gameboard.board[6] === "X" && gameboard.board[7] === "X" && gameboard.board[8] === "X") ||
+            (gameboard.board[0] === "X" && gameboard.board[3] === "X" && gameboard.board[6] === "X") ||
+            (gameboard.board[1] === "X" && gameboard.board[4] === "X" && gameboard.board[7] === "X") ||
+            (gameboard.board[2] === "X" && gameboard.board[5] === "X" && gameboard.board[8] === "X") ||
+            (gameboard.board[0] === "X" && gameboard.board[4] === "X" && gameboard.board[8] === "X") ||
+            (gameboard.board[2] === "X" && gameboard.board[4] === "X" && gameboard.board[6] === "X")
+            == true) {
+             console.log("Player1: " + player1.name + " won!")
+             return true
+
+        } else if ((gameboard.board[0] === "O" && gameboard.board[1] === "O" && gameboard.board[2] === "O") ||
+            (gameboard.board[3] === "O" && gameboard.board[4] === "O" && gameboard.board[5] === "O") ||
+            (gameboard.board[6] === "O" && gameboard.board[7] === "O" && gameboard.board[8] === "O") ||
+            (gameboard.board[0] === "O" && gameboard.board[3] === "O" && gameboard.board[6] === "O") ||
+            (gameboard.board[1] === "O" && gameboard.board[4] === "O" && gameboard.board[7] === "O") ||
+            (gameboard.board[2] === "O" && gameboard.board[5] === "O" && gameboard.board[8] === "O") ||
+            (gameboard.board[0] === "O" && gameboard.board[4] === "O" && gameboard.board[8] === "O") ||
+            (gameboard.board[2] === "O" && gameboard.board[4] === "O" && gameboard.board[6] === "O")
+            == true) {
+             console.log("Player2: " + player2.name + " won!")
+            return true
+        }
     }
 
+    return {
+        createTurn,
+        endOfGame
+    }
 }
 
 const game = Game();
@@ -71,32 +99,5 @@ const gameboard = Gameboard();
 
 gameboard.renderBoard()
 
-
-
-
-/* function GameWinner() {
-
-    if ((gameboard.board[0] === "X" && gameboard.board[1] === "X" && gameboard.board[2] === "X") ||
-        (gameboard.board[3] === "X" && gameboard.board[4] === "X" && gameboard.board[5] === "X") ||
-        (gameboard.board[6] === "X" && gameboard.board[7] === "X" && gameboard.board[8] === "X") ||
-        (gameboard.board[0] === "X" && gameboard.board[3] === "X" && gameboard.board[6] === "X") ||
-        (gameboard.board[1] === "X" && gameboard.board[4] === "X" && gameboard.board[7] === "X") ||
-        (gameboard.board[2] === "X" && gameboard.board[5] === "X" && gameboard.board[8] === "X") ||
-        (gameboard.board[0] === "X" && gameboard.board[4] === "X" && gameboard.board[8] === "X") ||
-        (gameboard.board[2] === "X" && gameboard.board[4] === "X" && gameboard.board[6] === "X")
-        == true) {
-        return alert("Player1: " + player1.name + " won!")
-    } else if ((gameboard.board[0] === "O" && gameboard.board[1] === "O" && gameboard.board[2] === "O") ||
-        (gameboard.board[3] === "O" && gameboard.board[4] === "O" && gameboard.board[5] === "O") ||
-        (gameboard.board[6] === "O" && gameboard.board[7] === "O" && gameboard.board[8] === "O") ||
-        (gameboard.board[0] === "O" && gameboard.board[3] === "O" && gameboard.board[6] === "O") ||
-        (gameboard.board[1] === "O" && gameboard.board[4] === "O" && gameboard.board[7] === "O") ||
-        (gameboard.board[2] === "O" && gameboard.board[5] === "O" && gameboard.board[8] === "O") ||
-        (gameboard.board[0] === "O" && gameboard.board[4] === "O" && gameboard.board[8] === "O") ||
-        (gameboard.board[2] === "O" && gameboard.board[4] === "O" && gameboard.board[6] === "O")
-        == true) {
-        return alert("Player2: " + player2.name + " won!")
-    }
-}
-
 const gameWinner = GameWinner() */
+gameboard.renderBoard()
