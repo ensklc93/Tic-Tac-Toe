@@ -63,7 +63,6 @@ function Player(name, choice) {
                 } else {
                     gameboard.board[number - 1] = choice
                     if (game.endOfGame()) {
-                        alert("hey")
                         gameboard.board = [1, 2, 3, 4, 5, 6, 7, 8, 9];
                         game.turn = 1;
                         return
@@ -101,7 +100,7 @@ function Gameboard() {
             currentPlayer = player1.name
         }
     }
-    
+
     return {
         board,
         renderBoard
