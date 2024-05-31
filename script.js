@@ -68,8 +68,6 @@ function Player(name, choice) {
 const player1 = Player('Enes', 'X')
 const player2 = Player('Hasan', 'O')
 
-/* player1.placeChoiceToBoard(2) */
-
 
 // Gameboard object contains the tic tac toe board 
 function Gameboard() {
