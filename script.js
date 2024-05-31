@@ -16,12 +16,12 @@ function Game() {
     }
 
     return {
+        createTurn
     }
+
 }
-const gameboard = Gameboard();
 
-gameboard.renderBoard()
-
+const game = Game();
 
 // Player object to create players with name, choice of "X" or "O" and input a number they want to place their choices on the board
 function Player(name, choice) {
