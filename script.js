@@ -1,8 +1,5 @@
-
-// Gameboard object contains the tic tac toe board 
-function Gameboard() {
-
-    const board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+//The Game object, which contains functional components of the tic tac toe game 
+function Game() {
 
     function createTurn() {
         let turn = 0; // Private variable
@@ -17,24 +14,8 @@ function Gameboard() {
             }
         };
     }
-    const round = createTurn()
-
-    //Toggle between player1 and player2
-    function switchPlayer() {
-        
-    }
-
 
     return {
-        board,
-        renderBoard: function () {
-            console.log(board[0] + "---" + board[1] + "---" + board[2] + "\n" + "\n"
-                + board[3] + "---" + board[4] + "---" + board[5] + "\n" + "\n"
-                + board[6] + "---" + board[7] + "---" + board[8] + "\n" + "\n")
-
-            console.log("Round " + round.getTurn())
-            round.increment();
-        }
     }
 }
 const gameboard = Gameboard();
