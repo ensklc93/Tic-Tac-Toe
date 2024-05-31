@@ -1,8 +1,6 @@
 //The Game object, which contains functional components of the tic tac toe game 
 function Game() {
 
-    function createTurn() {
-        let turn = 0; // Private variable
 
         return {
             increment: function () {
