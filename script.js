@@ -1,7 +1,9 @@
 //The Game object, which contains functional components of the tic tac toe game 
 function Game() {
 
+    let turn = 1;
 
+    function createTurn() {
         return {
             increment: function () {
                 turn++;
