@@ -26,8 +26,8 @@ function Game() {
             (gameboard.board[0] === "X" && gameboard.board[4] === "X" && gameboard.board[8] === "X") ||
             (gameboard.board[2] === "X" && gameboard.board[4] === "X" && gameboard.board[6] === "X")
             == true) {
-             console.log("Player1: " + player1.name + " won!")
-             return true
+            console.log("Player1: " + player1.name + " won!")
+            return true
 
         } else if ((gameboard.board[0] === "O" && gameboard.board[1] === "O" && gameboard.board[2] === "O") ||
             (gameboard.board[3] === "O" && gameboard.board[4] === "O" && gameboard.board[5] === "O") ||
@@ -38,7 +38,7 @@ function Game() {
             (gameboard.board[0] === "O" && gameboard.board[4] === "O" && gameboard.board[8] === "O") ||
             (gameboard.board[2] === "O" && gameboard.board[4] === "O" && gameboard.board[6] === "O")
             == true) {
-             console.log("Player2: " + player2.name + " won!")
+            console.log("Player2: " + player2.name + " won!")
             return true
         }
     }
@@ -50,6 +50,7 @@ function Game() {
 }
 
 const game = Game();
+
 
 // Player object to create players with name, choice of "X" or "O" and input a number they want to place their choices on the board
 function Player(name, choice) {
@@ -76,6 +77,7 @@ function Player(name, choice) {
         }
     }
 }
+
 
 const player1 = Player('Enes', 'X')
 const player2 = Player('Hasan', 'O')
@@ -109,4 +111,3 @@ function Gameboard() {
 const gameboard = Gameboard();
 
 
-gameboard.renderBoard()
