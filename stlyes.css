@@ -8,18 +8,21 @@
     margin: 100px auto;
     display: flex;
     flex-wrap: wrap;
-    background-color: black;
-    min-width: 100px;
-    min-height: 100px;
-    max-width: 150px;
+    max-width: 300px;
 }
 
 .space {
     background-color: white;
-    min-width: 50px;
-    max-width: 50px;
-    max-height: 50px;
-    border: 1px red solid;
+    min-width: 100px;
+    max-width: 100px;
+    max-height: 100px;
+    min-height: 100px;
+ 
+    font-size: xx-large;
+    text-align: center;
+    display: grid;
+    align-items: center;
+}
 }
 
 .player-display {
