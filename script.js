@@ -1,33 +1,6 @@
 //The Game object, which contains functional components of the tic tac toe game 
 function Game() {
 
-    let turn = 1;
-
-    function createTurn() {
-        return {
-            increment: function () {
-                turn++;
-                return turn;
-            },
-            getTurn: function () {
-                return turn;
-            }
-        };
-    }
-
-    function endOfGame() {
-
-        if ((gameboard.board[0] === "X" && gameboard.board[1] === "X" && gameboard.board[2] === "X") ||
-            (gameboard.board[3] === "X" && gameboard.board[4] === "X" && gameboard.board[5] === "X") ||
-            (gameboard.board[6] === "X" && gameboard.board[7] === "X" && gameboard.board[8] === "X") ||
-            (gameboard.board[0] === "X" && gameboard.board[3] === "X" && gameboard.board[6] === "X") ||
-            (gameboard.board[1] === "X" && gameboard.board[4] === "X" && gameboard.board[7] === "X") ||
-            (gameboard.board[2] === "X" && gameboard.board[5] === "X" && gameboard.board[8] === "X") ||
-            (gameboard.board[0] === "X" && gameboard.board[4] === "X" && gameboard.board[8] === "X") ||
-            (gameboard.board[2] === "X" && gameboard.board[4] === "X" && gameboard.board[6] === "X")
-            == true) {
-            console.log("Player1: " + player1.name + " won!")
-            return true
 
         } else if ((gameboard.board[0] === "O" && gameboard.board[1] === "O" && gameboard.board[2] === "O") ||
             (gameboard.board[3] === "O" && gameboard.board[4] === "O" && gameboard.board[5] === "O") ||
@@ -43,13 +16,6 @@ function Game() {
         }
     }
 
-    return {
-        createTurn,
-        endOfGame
-    }
-}
-
-const game = Game();
 
 
 // Player object to create players with name, choice of "X" or "O" and input a number they want to place their choices on the board
@@ -100,14 +66,33 @@ function Gameboard() {
             currentPlayer = player2.name
         } else {
             currentPlayer = player1.name
+function endOfGame() {
+    if (board.every(item => typeof item !== 'number')) {
+        console.log('It`s a tie')
+    } else {
+        if ((board[0] === "X" && board[1] === "X" && board[2] === "X") ||
+            (board[3] === "X" && board[4] === "X" && board[5] === "X") ||
+            (board[6] === "X" && board[7] === "X" && board[8] === "X") ||
+            (board[0] === "X" && board[3] === "X" && board[6] === "X") ||
+            (board[1] === "X" && board[4] === "X" && board[7] === "X") ||
+            (board[2] === "X" && board[5] === "X" && board[8] === "X") ||
+            (board[0] === "X" && board[4] === "X" && board[8] === "X") ||
+            (board[2] === "X" && board[4] === "X" && board[6] === "X")
+            == true) {
+            console.log("Player1: " + player1.name + " won!")
+            return true
+        } else if ((board[0] === "O" && board[1] === "O" && board[2] === "O") ||
+            (board[3] === "O" && board[4] === "O" && board[5] === "O") ||
+            (board[6] === "O" && board[7] === "O" && board[8] === "O") ||
+            (board[0] === "O" && board[3] === "O" && board[6] === "O") ||
+            (board[1] === "O" && board[4] === "O" && board[7] === "O") ||
+            (board[2] === "O" && board[5] === "O" && board[8] === "O") ||
+            (board[0] === "O" && board[4] === "O" && board[8] === "O") ||
+            (board[2] === "O" && board[4] === "O" && board[6] === "O")
+            == true) {
+            console.log("Player2: " + player2.name + " won!")
+            return true
         }
     }
-
-    return {
-        board,
-        renderBoard
-    }
 }
-const gameboard = Gameboard();
-
 
