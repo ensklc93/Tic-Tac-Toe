@@ -14,19 +14,18 @@
     </div>
 
     <div class="player-display">
-        <form action="" name="playerOneForm">
-            <div class="player-one">
-                <h2>Player One</h2>
-                <label for="player-one__input">Name: <input type="text" name="player" id="player-one__input">
-                </label>
-                <select name="player" id="player-one__choice">
-                    <option value="-" disabled selected>--Please choose X or O --</option>
-                    <option value="X"> X </option>
-                    <option value="O"> O </option>
-                </select>
-                <button type="submit" class="button-confirm">Confirm</button>
-            </div>
-        </form>
+
+        <div class="player-one">
+            <h2>Player One</h2>
+            <label for="player-one__input">Name: <input type="text" name="player" id="player-one__input">
+            </label>
+            <select name="player" id="player-one__choice">
+                <option value="-" disabled selected>--Please choose X or O --</option>
+                <option value="X"> X </option>
+                <option value="O"> O </option>
+            </select>
+            <button type="submit" id="playerone-button-confirm">Confirm</button>
+        </div>
 
         <div class="player-two">
             <h2>Player Two</h2>
@@ -38,6 +37,7 @@
                 <option value="X"> X </option>
                 <option value="O"> O </option>
             </select>
+            <button type="submit" id="playertwo-button-confirm">Confirm</button>
         </div>
     </div>
 </body>
