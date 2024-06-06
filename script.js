@@ -15,39 +15,47 @@ let currentPlayer;
     });
 })();
 
-
-
-
 // Player object to create players with name, choice of "X" or "O" and input a number they want to place their choices on the board
 function Player(name, choice) {
+    const oneButtonConfirm = document.querySelector('#playerone-button-confirm')
+    const twoButtonConfirm = document.querySelector('#playertwo-button-confirm')
+    const playerOneName = document.querySelector('#player-one__input')
+    const playerOneChoice = document.querySelector('#player-one__choice')
+    const playerTwoName = document.querySelector('#player-two__input')
+    const playerTwoChoice = document.querySelector('#player-two__choice')
+
+    oneButtonConfirm.addEventListener('click', (e) => {
+        player1 = Player(playerOneName.value, playerOneChoice.value)
+        currentPlayer = player1;
+        e.preventDefault();
+        return true
+    });
+
+    twoButtonConfirm.addEventListener('click', (e) => {
+        player2 = Player(playerTwoName.value, playerTwoChoice.value)
+        e.preventDefault();
+        return true;
+    });
+
+    function currentPlayerSelection() {
+        if (currentPlayer.name === player1.name) {
+            currentPlayer = player2
+            console.log(currentPlayer);
+        } else {
+            currentPlayer = player1
+            console.log(currentPlayer);
+        }
+    }
+
     return {
         name,
         choice,
+        currentPlayerSelection
     }
 }
 
+const player = Player();
 
-const player1 = Player('Enes', 'X')
-const player2 = Player('Hasan', 'O')
-
-
-// Gameboard object contains the tic tac toe board 
-function Gameboard() {
-
-    let board = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-    let currentPlayer = player1.name;
-
-    function renderBoard() {
-        console.log(gameboard.board[0] + "---" + gameboard.board[1] + "---" + gameboard.board[2] + "\n" + "\n"
-            + gameboard.board[3] + "---" + gameboard.board[4] + "---" + gameboard.board[5] + "\n" + "\n"
-            + gameboard.board[6] + "---" + gameboard.board[7] + "---" + gameboard.board[8] + "\n" + "\n")
-
-        console.log("Round " + game.createTurn().getTurn() + ": I'ts the turn of -> " + currentPlayer)
-        game.createTurn().increment();
-        if (currentPlayer === player1.name) {
-            currentPlayer = player2.name
-        } else {
-            currentPlayer = player1.name
 function endOfGame() {
     if (board.every(item => typeof item !== 'number')) {
         console.log('It`s a tie')
@@ -78,3 +86,15 @@ function endOfGame() {
     }
 }
 
+for (let i = 1; i < 10; i++) {
+    let space = document.querySelector(`[data-space="${i}"]`)
+    space.addEventListener('click', (e) => {
+        if (player1 && player2) {
+            let number = e.currentTarget.getAttribute('data-space')
+            board.splice((number - 1), 1, currentPlayer.choice)
+            e.currentTarget.textContent = currentPlayer.choice
+            player.currentPlayerSelection();
+            endOfGame();
+        };
+    });
+};
