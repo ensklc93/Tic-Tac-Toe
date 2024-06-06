@@ -23,6 +23,41 @@
     display: grid;
     align-items: center;
 }
+
+.space:nth-child(1) {
+    border-bottom: 1px black solid;
+    border-right: 1px black solid;
+}
+
+.space:nth-child(2) {
+    border-bottom: 1px black solid;
+    border-right: 1px black solid;
+}
+
+.space:nth-child(3) {
+    border-bottom: 1px black solid;
+}
+
+.space:nth-child(4) {
+    border-bottom: 1px black solid;
+    border-right: 1px black solid;
+}
+
+.space:nth-child(5) {
+    border-bottom: 1px black solid;
+    border-right: 1px black solid;
+}
+
+.space:nth-child(6) {
+    border-bottom: 1px black solid;
+}
+
+.space:nth-child(7) {
+    border-right: 1px black solid;
+}
+
+.space:nth-child(8) {
+    border-right: 1px black solid;
 }
 
 .player-display {
