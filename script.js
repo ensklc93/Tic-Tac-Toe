@@ -1,4 +1,19 @@
+//Creating player1, player2, currentPlayer variables
+let board = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+let player1;
+let player2;
+let currentPlayer;
 
+// Gameboard object contains the tic tac toe board 
+(function gameboard() {
+    board.forEach((element) => {
+        const container = document.querySelector('.container');
+        const div = document.createElement('div');
+        div.className = 'space';
+        div.dataset.space = element;
+        container.appendChild(div);
+    });
+})();
 
 
 
