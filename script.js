@@ -1,4 +1,4 @@
-//Creating player1, player2, currentPlayer variables
+// Creating player1, player2, currentPlayer variables
 let board = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 let player1;
 let player2;
@@ -90,11 +90,15 @@ for (let i = 1; i < 10; i++) {
     let space = document.querySelector(`[data-space="${i}"]`)
     space.addEventListener('click', (e) => {
         if (player1 && player2) {
-            let number = e.currentTarget.getAttribute('data-space')
-            board.splice((number - 1), 1, currentPlayer.choice)
-            e.currentTarget.textContent = currentPlayer.choice
-            player.currentPlayerSelection();
-            endOfGame();
+            if (isNaN(e.currentTarget.textContent)) {
+                return
+            } else {
+                let number = e.currentTarget.getAttribute('data-space')
+                board.splice((number - 1), 1, currentPlayer.choice)
+                e.currentTarget.textContent = currentPlayer.choice
+                player.currentPlayerSelection();
+                endOfGame();
+            }
         };
     });
 };
