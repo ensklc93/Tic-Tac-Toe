@@ -1,18 +1,5 @@
 
 
-        } else if ((gameboard.board[0] === "O" && gameboard.board[1] === "O" && gameboard.board[2] === "O") ||
-            (gameboard.board[3] === "O" && gameboard.board[4] === "O" && gameboard.board[5] === "O") ||
-            (gameboard.board[6] === "O" && gameboard.board[7] === "O" && gameboard.board[8] === "O") ||
-            (gameboard.board[0] === "O" && gameboard.board[3] === "O" && gameboard.board[6] === "O") ||
-            (gameboard.board[1] === "O" && gameboard.board[4] === "O" && gameboard.board[7] === "O") ||
-            (gameboard.board[2] === "O" && gameboard.board[5] === "O" && gameboard.board[8] === "O") ||
-            (gameboard.board[0] === "O" && gameboard.board[4] === "O" && gameboard.board[8] === "O") ||
-            (gameboard.board[2] === "O" && gameboard.board[4] === "O" && gameboard.board[6] === "O")
-            == true) {
-            console.log("Player2: " + player2.name + " won!")
-            return true
-        }
-    }
 
 
 
@@ -21,24 +8,6 @@ function Player(name, choice) {
     return {
         name,
         choice,
-        placeChoiceToBoard: function (number) {
-            if (number > 0 && number < 10) {
-                if (isNaN(gameboard.board[number - 1])) {
-                    console.log("please choose another number")
-                } else {
-                    gameboard.board[number - 1] = choice
-                    if (game.endOfGame()) {
-                        gameboard.board = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-                        game.turn = 1;
-                        return
-                    } else {
-                        gameboard.renderBoard();
-                    }
-                }
-            } else {
-                console.log("Place your choice on a number between 1 to 9");
-            }
-        }
     }
 }
 
