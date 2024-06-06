@@ -1,5 +1,3 @@
-//The Game object, which contains functional components of the tic tac toe game 
-function Game() {
 
 
         } else if ((gameboard.board[0] === "O" && gameboard.board[1] === "O" && gameboard.board[2] === "O") ||
