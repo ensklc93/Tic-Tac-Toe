@@ -1,45 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tic Tac Toe</title>
-    <link rel="stylesheet" href="./stlyes.css">
+    <link rel="stylesheet" href="./stlyes.css" />
     <script src="./script.js" defer></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-    </div>
-
-    <div class="player-display">
-
+      <div class="rules">
+        <h2>The Basic Tic Tac Toe Rules</h2>
+        <p>
+          <strong>Players:</strong> Two players, one uses "X" and the other "O".
+        </p>
+        <p>
+          <strong>Objective:</strong> Be the first to get three of your marks in
+          a row (horizontally, vertically, or diagonally).
+        </p>
+        <strong>Gameplay:</strong>
+        
+          <li>
+            Players take turns placing their mark (X or O) in an empty cell.
+          </li>
+          <li>The game starts with an empty board.</li>
+          <p>
+            <strong>Winning:</strong> The first player to align three of their marks in a row wins.
+          </p>
+          <p>
+            <strong>Draw:</strong> If all nine cells are filled and neither player has three in a row, the game ends in a draw.
+          </p>
+       
+      </div>
+      <div class="score">
+        <h2>The Final Result</h2>
+        <p id="finalScore">Please choose a name and "X" or "O" <br> After choosing press confirm to start the game</p>
+      </div>
+      <div class="wrapper"></div>
+      <button class="restart">Restart</button>
+      <div class="player-display">
         <div class="player-one">
-            <h2>Player One</h2>
-            <label for="player-one__input">Name: <input type="text" name="player" id="player-one__input">
-            </label>
-            <select name="player" id="player-one__choice">
-                <option value="-" disabled selected>--Please choose X or O --</option>
-                <option value="X"> X </option>
-                <option value="O"> O </option>
-            </select>
-            <button type="submit" id="playerone-button-confirm">Confirm</button>
-        </div>
+          <h2>Player One</h2>
+          <label for="player-one__input"
+            >Name:
+            <input type="text" name="player" id="player-one__input" required />
+          </label>
+          <select name="player" id="player-one__choice">
+            <option value="-" disabled selected>
+              --Please choose X or O --
+            </option>
+            <option value="X">X</option>
+            <option value="O">O</option>
+          </select>
 
+          <button type="submit" id="playerone-button-confirm">Confirm</button>
+        </div>
         <div class="player-two">
-            <h2>Player Two</h2>
-            <label for="player-two__input">Name: <input type="text" name="player" id="player-two__input">
-            </label>
-
-            <select name="player" id="player-two__choice">
-                <option value="-" disabled selected>--Please choose X or O --</option>
-                <option value="X"> X </option>
-                <option value="O"> O </option>
-            </select>
-            <button type="submit" id="playertwo-button-confirm">Confirm</button>
+          <h2>Player Two</h2>
+          <label for="player-two__input"
+            >Name:
+            <input type="text" name="player" id="player-two__input" required />
+          </label>
+          <select name="player" id="player-two__choice">
+            <option value="-" disabled selected>
+              --Please choose X or O --
+            </option>
+            <option value="X">X</option>
+            <option value="O">O</option>
+          </select>
+          <button type="submit" id="playertwo-button-confirm">Confirm</button>
         </div>
+      </div>
     </div>
-</body>
-
+  </body>
 </html>
